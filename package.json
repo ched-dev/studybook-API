@@ -1,14 +1,14 @@
 {
-  "name": "definitions",
+  "name": "studybook-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "migrate:dev": "knex migrate:latest",
     "migrate:production": "NODE_ENV=production knex migrate:latest",
+    "seed:dev": "knex seed:run",
     "seed:production": "NODE_ENV=production knex seed:run",
-    "deploy": "git push heroku master",
-    "deploy:dev-terms": "git push heroku-dev-terms master",
-    "deploy:music-terms": "git push heroku-music-terms master",
+    "deploy": "echo void",
     "backup": "node tasks/backup.js"
   },
   "dependencies": {
@@ -24,5 +24,9 @@
     "pg": "^7.2.0",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.3"
+  },
+  "engines": {
+    "node": ">=10.0.0 <13.0.0",
+    "npm": ">=6.0.0"
   }
 }

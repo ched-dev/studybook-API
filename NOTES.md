@@ -1,4 +1,4 @@
-# Definitions API
+# Studybook API
 
 ## API
 
@@ -12,7 +12,7 @@
   - Answer
 - Categories:
   - Front-end
-  - Back-end)
+  - Back-end
 
 ## Apps
 

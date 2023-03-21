@@ -3,10 +3,10 @@ const environment = 'production'
 const config = require('../knexfile.js')[environment]
 const db = require('knex')(config)
 const fs = require('fs')
-
 dumpDatabaseTo(`backups/studybook-dump-${Date.now()}.json`)
 
 function dumpDatabaseTo(path) {
+  console.log('Backing up to:', path)
   return Promise.all([
     db('book'),
     db('term'),

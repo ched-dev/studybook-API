@@ -1,8 +1,8 @@
-# Definitions API
+# Studybook API
 
-> An API for developer terms, topics, and questions
+> An API for studying terms, topics, and questions
 
-[dev-terms-api.herokuapp.com](https://dev-terms-api.herokuapp.com)
+[studybook-app.firebaseapp.com/](https://studybook-app.firebaseapp.com/)
 
 # API Endpoints
 
@@ -129,18 +129,24 @@ Authentication is only required for write actions.
 
 # Dev Setup
 
-- `npm install`
-- `createdb definitions`
-- `knex migrate:latest`
-- `knex seed:run`
-
-To support Auth, add `.env` with the keys from a Github App:
+Create an `.env` file with the following info:
 
 ```
+DATABASE_URL=postgres://postgres:@localhost:5432/studybook
+PRODUCTION_DATABASE_URL=postgres://.../studybook
+# Auth support
 GITHUB_CLIENT_ID=xxx
 GITHUB_CLIENT_SECRET=xxx
 ```
 
+Then one time install commands:
+
+- `npm install`
+- `createdb studybook`
+- `npm run migrate:dev`
+- `npm run seed:dev`
+
+For support Auth, add the `GITHUB_*` keys from a Github App.
 The Github App will need `read:org` scope.
 
 # Running
@@ -155,26 +161,16 @@ Runs on `http://localhost:3001`
 
 ## Database: Heroku
 
-Setup your local `.env` file with the `DATABASE_URL` from Heroku, then run:
+Setup your local `.env` file with the `PRODUCTION_DATABASE_URL` from your Postgres, then run:
 
 ```
 npm run migrate:production
 npm run seed:production
 ```
 
-## Hosting: Heroku
+## Hosting: ...
 
-Deployed URLs:
-- [dev-terms-api.herokuapp.com](https://dev-terms-api.herokuapp.com)
-- [music-terms-api.herokuapp.com](https://music-terms-api.herokuapp.com)
-
-```
-npm run deploy:dev-terms
-npm run deploy:music-terms
-```
-
-Aliased to heroku remotes (e.g. `git push heroku master`)
-
+This app is hosted on ...
 
 # Backup
 
