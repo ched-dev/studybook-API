@@ -8,6 +8,9 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.PRODUCTION_DATABASE_URL + '?ssl=true'
+    connection: { 
+      connectionString: process.env.PRODUCTION_DATABASE_URL + '?ssl=true',
+      ssl: { rejectUnauthorized: false }
+    }
   }
 };
