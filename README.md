@@ -2,7 +2,7 @@
 
 > An API for studying terms, topics, and questions
 
-[studybook-app.firebaseapp.com/](https://studybook-app.firebaseapp.com/)
+[studybook-api-g061.onrender.com/](https://studybook-api-g061.onrender.com/)
 
 # API Endpoints
 
@@ -17,115 +17,6 @@ Authentication is only required for write actions.
 `POST /auth/token`  requires `code` in body
 
 `GET /auth/validate` Requires `Authorization: Bearer github_access_token`
-
-## Terms
-
-`GET /terms`
-```
-[
-  {
-    "id": 1,
-    "name": "Abstraction"
-  },
-  ...
-]
-```
-
-`GET /terms/1`
-```
-{
-  "id": 1,
-  "name": "Abstraction"
-}
-```
-
-`GET /terms/1/topics`
-```
-[
-  {
-    "id": 13,
-    "name": "Design Patterns"
-  },
-  ...
-]
-```
-
-## Topics
-
-`GET /topics`
-```
-[
-  {
-    "id": 1,
-    "name": "AJAX"
-  },
-  ...
-]
-```
-
-`GET /topics/1`
-```
-{
-  "id": 1,
-  "name": "AJAX"
-}
-```
-
-`GET /topics/1/terms`
-```
-[
-  {
-    "id": 1,
-    "name": "Abstraction"
-  },
-  ...
-]
-```
-
-## Questions
-
-`GET /questions`
-```
-[
-  {
-    "id": 1,
-    "title": "What is the difference between Git and Github?",
-    "answer": "Git is a Source Control system while Github is a hosting platform for Git repositories. Github has features like Forks, Pull Requests, and Issues."
-  },
-  ...
-]
-```
-
-`GET /questions/1`
-```
-{
-  "id": 1,
-  "title": "What is the difference between Git and Github?",
-  "answer": "Git is a Source Control system while Github is a hosting platform for Git repositories. Github has features like Forks, Pull Requests, and Issues."
-}
-```
-
-`GET /questions/1/terms`
-```
-[
-  {
-    "id": 10,
-    "name": "Github"
-  },
-  ...
-]
-```
-
-`GET /questions/1/topics`
-```
-[
-  {
-    "id": 10,
-    "name": "Git & Github"
-  },
-  ...
-]
-```
 
 # Dev Setup
 
@@ -168,9 +59,9 @@ npm run migrate:production
 npm run seed:production
 ```
 
-## Hosting: ...
+## Hosting: Render.com
 
-This app is hosted on ...
+This app is hosted on Render.com at [studybook-api-g061.onrender.com/](https://studybook-api-g061.onrender.com/). It will auto-deploy with commits push to main github repo.
 
 # Backup
 

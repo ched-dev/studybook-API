@@ -1,7 +1,7 @@
 const data = require('../backups/studybook-dump-1651730903770.json')
 
 // Deletes ALL existing items and repopulates from json file
-exports.seed = function(knex, Promise) {
+exports.seed = function(knex) {
   const joinTables = [
     {
       table: `term_topic`,
