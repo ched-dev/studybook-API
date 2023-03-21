@@ -9,7 +9,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: { 
-      connectionString: process.env.PRODUCTION_DATABASE_URL + '?ssl=true',
+      connectionString: process.env.PRODUCTION_DATABASE_URL,
       ssl: { rejectUnauthorized: false, requestCert: true }
     }
   }
