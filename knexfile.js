@@ -10,7 +10,7 @@ module.exports = {
     client: 'pg',
     connection: { 
       connectionString: process.env.PRODUCTION_DATABASE_URL + '?ssl=true',
-      ssl: { rejectUnauthorized: false }
+      ssl: { rejectUnauthorized: false, requestCert: true }
     }
   }
 };
