@@ -33,9 +33,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(function(req, res, next) {
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 })
-app.use('/auth', auth)
-app.use('/books', books)
-app.get('/', function(req, res, next) {
+app.use('/api/auth', auth)
+app.use('/api/books', books)
+app.get('/api', function(req, res, next) {
   res.json({ success: true, message: `An API for studying terms, topics, and questions` })
 })
 
