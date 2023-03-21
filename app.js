@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // for vercel hosting
 app.use(function(req, res, next) {
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  next();
 })
 app.use('/api/auth', auth)
 app.use('/api/books', books)
