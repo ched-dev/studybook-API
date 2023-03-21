@@ -29,10 +29,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
+// for vercel hosting
+app.use(function(req, res, next) {
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+})
 app.use('/auth', auth)
 app.use('/books', books)
 app.get('/', function(req, res, next) {
-  res.json({ success: true, message: `An API for developer terms, topics, and questions` })
+  res.json({ success: true, message: `An API for studying terms, topics, and questions` })
 })
 
 // catch 404 and forward to error handler
