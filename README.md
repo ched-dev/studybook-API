@@ -2,7 +2,7 @@
 
 > An API for studying terms, topics, and questions
 
-[studybook-api-g061.onrender.com/](https://studybook-api-g061.onrender.com/)
+[studybook-api.vercel.app/](https://studybook-api.vercel.app/)
 
 # API Endpoints
 
@@ -24,7 +24,15 @@ Create an `.env` file with the following info:
 
 ```
 DATABASE_URL=postgres://postgres:@localhost:5432/studybook
-PRODUCTION_DATABASE_URL=postgres://.../studybook
+# For `npm run backup` command
+PRODUCTION_DATABASE_URL=postgres://.../studybook?ssl=true
+PRODUCTION_DATABASE_CA=xxxOPTIONALxxx
+# for `npm run backup-db` command
+DB_HOST=
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USER=postgres
+DB_PASSWORD=
 # Auth support
 GITHUB_CLIENT_ID=xxx
 GITHUB_CLIENT_SECRET=xxx
@@ -61,7 +69,7 @@ npm run seed:production
 
 ## Hosting: Render.com
 
-This app is hosted on Render.com at [studybook-api-g061.onrender.com/](https://studybook-api-g061.onrender.com/). It will auto-deploy with commits push to main github repo.
+This app is hosted on Render.com at [studybook-api.vercel.app/](https://studybook-api.vercel.app/). It will auto-deploy with commits push to main github repo.
 
 # Backup
 

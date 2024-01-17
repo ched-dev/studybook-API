@@ -9,7 +9,8 @@
     "seed:dev": "knex seed:run",
     "seed:production": "NODE_ENV=production knex seed:run",
     "deploy": "echo void",
-    "backup": "node tasks/backup.js"
+    "backup": "node tasks/backup.js",
+    "backup-db": "./tasks/pg_backup_db.sh"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
